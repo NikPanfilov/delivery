@@ -1,0 +1,31 @@
+[versions]
+agp = "8.4.2"
+kotlin = "1.9.22"
+
+gradle = "8.4.1"
+
+android-core = "1.13.1"
+
+compose-activity = "1.9.0"
+compose-navigation = "2.8.0-beta04"
+
+appcompat = "1.7.0"
+
+[libraries]
+gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+
+kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+
+android-core = { group = "androidx.core", name = "core-ktx", version.ref = "android-core" }
+
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
+compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
+
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
