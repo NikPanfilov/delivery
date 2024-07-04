@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "delivery"
 
 include(":app")
+include(":core:navigation")
