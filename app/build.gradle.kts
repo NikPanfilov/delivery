@@ -20,4 +20,5 @@ dependencies {
 
 	implementation(project(":core:navigation"))
 	implementation(project(":core:token"))
+	implementation(project(":core:network"))
 }
