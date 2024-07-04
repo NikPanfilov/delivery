@@ -17,4 +17,6 @@ dependencies {
 	implementation(libs.android.core)
 	implementation(libs.compose.activity)
 	implementation(libs.compose.navigation)
+
+	implementation(project(":core:navigation"))
 }
