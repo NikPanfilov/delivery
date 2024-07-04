@@ -6,6 +6,7 @@ import dagger.Component
 import ru.nikpanfilov.delivery.MainActivity
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
+import ru.nikpanfilov.delivery.core.network.di.NetworkModule
 import ru.nikpanfilov.delivery.core.token.di.TokenModule
 import javax.inject.Singleton
 
@@ -13,6 +14,7 @@ import javax.inject.Singleton
 	modules = [
 		RoutersModule::class,
 		TokenModule::class,
+		NetworkModule::class,
 	]
 )
 @Singleton

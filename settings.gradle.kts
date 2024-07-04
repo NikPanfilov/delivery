@@ -18,3 +18,4 @@ rootProject.name = "delivery"
 include(":app")
 include(":core:navigation")
 include(":core:token")
+include(":core:network")
