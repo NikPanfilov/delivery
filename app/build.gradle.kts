@@ -22,4 +22,5 @@ dependencies {
 	implementation(project(":core:token"))
 	implementation(project(":core:network"))
 	implementation(project(":core:ui"))
+	implementation(project(":core:presentation"))
 }
