@@ -8,6 +8,7 @@ import ru.nikpanfilov.delivery.shared.validators.domain.address.AddressInvalidSt
 import ru.nikpanfilov.delivery.shared.validators.domain.city.CityInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.code.CodeInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.courier.CourierInvalidState
+import ru.nikpanfilov.delivery.shared.validators.domain.email.EmailInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.empty.EmptyInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.name.NameInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.phone.PhoneInvalidState
@@ -71,4 +72,12 @@ fun getCityError(state: ValidationState): String? =
 		CityInvalidState.TOO_LONG            -> stringResource(R.string.city_too_long)
 		CityInvalidState.DIFFERENT_ALPHABETS -> stringResource(R.string.city_different_alphabets)
 		else                                 -> null
+	}
+
+@Composable
+fun getEmailError(state: ValidationState): String? =
+	when ((state as? ValidationState.Invalid)?.invalidState as? EmailInvalidState) {
+		EmailInvalidState.EMPTY            -> stringResource(R.string.empty)
+		EmailInvalidState.INCORRECT_FORMAT -> stringResource(R.string.email_incorrect_format)
+		else                               -> null
 	}
