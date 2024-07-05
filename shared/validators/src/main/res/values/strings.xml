@@ -16,4 +16,8 @@
 	<string name="address_different_alphabets">Значение задано с использованием разных алфавитов</string>
 
 	<string name="courier_too_long">Максимальная длина — 300 символов</string>
+
+	<string name="city_restricted_symbols">Некорректный формат</string>
+	<string name="city_too_long">Максимальная длина — 60 символов</string>
+	<string name="city_different_alphabets">Значение задано с использованием разных алфавитов</string>
 </resources>

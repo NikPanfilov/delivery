@@ -5,6 +5,7 @@ import androidx.compose.ui.res.stringResource
 import ru.nikpanfilov.delivery.shared.validators.R
 import ru.nikpanfilov.delivery.shared.validators.domain.ValidationState
 import ru.nikpanfilov.delivery.shared.validators.domain.address.AddressInvalidState
+import ru.nikpanfilov.delivery.shared.validators.domain.city.CityInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.code.CodeInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.courier.CourierInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.empty.EmptyInvalidState
@@ -60,4 +61,14 @@ fun getCourierError(state: ValidationState): String? =
 	when ((state as? ValidationState.Invalid)?.invalidState as? CourierInvalidState) {
 		CourierInvalidState.TOO_LONG -> stringResource(R.string.courier_too_long)
 		else                         -> null
+	}
+
+@Composable
+fun getCityError(state: ValidationState): String? =
+	when ((state as? ValidationState.Invalid)?.invalidState as? CityInvalidState) {
+		CityInvalidState.EMPTY               -> stringResource(R.string.empty)
+		CityInvalidState.INCORRECT_FORMAT    -> stringResource(R.string.city_restricted_symbols)
+		CityInvalidState.TOO_LONG            -> stringResource(R.string.city_too_long)
+		CityInvalidState.DIFFERENT_ALPHABETS -> stringResource(R.string.city_different_alphabets)
+		else                                 -> null
 	}
