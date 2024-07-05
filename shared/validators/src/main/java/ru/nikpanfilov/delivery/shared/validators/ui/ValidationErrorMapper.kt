@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import ru.nikpanfilov.delivery.shared.validators.R
 import ru.nikpanfilov.delivery.shared.validators.domain.ValidationState
+import ru.nikpanfilov.delivery.shared.validators.domain.address.AddressInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.code.CodeInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.empty.EmptyInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.name.NameInvalidState
@@ -41,4 +42,14 @@ fun getNameError(state: ValidationState): String? =
 		NameInvalidState.TOO_LONG            -> stringResource(R.string.name_too_long)
 		NameInvalidState.DIFFERENT_ALPHABETS -> stringResource(R.string.name_different_alphabets)
 		else                                 -> null
+	}
+
+@Composable
+fun getAddressError(state: ValidationState): String? =
+	when ((state as? ValidationState.Invalid)?.invalidState as? AddressInvalidState) {
+		AddressInvalidState.EMPTY               -> stringResource(R.string.empty)
+		AddressInvalidState.INCORRECT_FORMAT    -> stringResource(R.string.address_incorrect_format)
+		AddressInvalidState.TOO_LONG            -> stringResource(R.string.address_too_long)
+		AddressInvalidState.DIFFERENT_ALPHABETS -> stringResource(R.string.address_different_alphabets)
+		else                                    -> null
 	}

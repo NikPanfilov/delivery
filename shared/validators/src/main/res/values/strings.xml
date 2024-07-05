@@ -10,4 +10,8 @@
 	<string name="name_restricted_symbols">Некорректный формат</string>
 	<string name="name_too_long">Максимальная длина — 60 символов</string>
 	<string name="name_different_alphabets">Значение задано с использованием разных алфавитов</string>
+
+	<string name="address_incorrect_format">Некорректный формат</string>
+	<string name="address_too_long">Максимальная длина — 100 символов</string>
+	<string name="address_different_alphabets">Значение задано с использованием разных алфавитов</string>
 </resources>
