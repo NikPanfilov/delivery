@@ -1,5 +1,6 @@
 plugins {
 	alias(libs.plugins.library)
+	alias(libs.plugins.compose.library)
 }
 
 android {
@@ -7,5 +8,6 @@ android {
 }
 
 dependencies {
-
+	implementation(libs.compose.runtime)
+	implementation(libs.compose.ui)
 }

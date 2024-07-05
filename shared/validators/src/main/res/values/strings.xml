@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="empty">Поле является обязательным</string>
+
+	<string name="phone_restricted_symbols">Неверный формат номера</string>
+</resources>
