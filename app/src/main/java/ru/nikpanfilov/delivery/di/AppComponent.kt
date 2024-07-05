@@ -4,10 +4,14 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import ru.nikpanfilov.delivery.MainActivity
+import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
+import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import javax.inject.Singleton
 
 @Component(
-	modules = []
+	modules = [
+		RoutersModule::class,
+	]
 )
 @Singleton
 interface AppComponent {
@@ -22,4 +26,8 @@ interface AppComponent {
 	}
 
 	fun inject(activity: MainActivity)
+
+	val globalRouter: GlobalRouter
+
+	val navControllerHolder: NavControllerHolder
 }
