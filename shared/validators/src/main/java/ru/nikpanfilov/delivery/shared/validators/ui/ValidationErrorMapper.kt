@@ -6,6 +6,7 @@ import ru.nikpanfilov.delivery.shared.validators.R
 import ru.nikpanfilov.delivery.shared.validators.domain.ValidationState
 import ru.nikpanfilov.delivery.shared.validators.domain.code.CodeInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.empty.EmptyInvalidState
+import ru.nikpanfilov.delivery.shared.validators.domain.name.NameInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.phone.PhoneInvalidState
 
 @Composable
@@ -30,4 +31,14 @@ fun getNotEmptyError(state: ValidationState): String? =
 	when ((state as? ValidationState.Invalid)?.invalidState as? EmptyInvalidState) {
 		EmptyInvalidState -> stringResource(R.string.empty)
 		else              -> null
+	}
+
+@Composable
+fun getNameError(state: ValidationState): String? =
+	when ((state as? ValidationState.Invalid)?.invalidState as? NameInvalidState) {
+		NameInvalidState.EMPTY               -> stringResource(R.string.empty)
+		NameInvalidState.INCORRECT_FORMAT    -> stringResource(R.string.name_restricted_symbols)
+		NameInvalidState.TOO_LONG            -> stringResource(R.string.name_too_long)
+		NameInvalidState.DIFFERENT_ALPHABETS -> stringResource(R.string.name_different_alphabets)
+		else                                 -> null
 	}
