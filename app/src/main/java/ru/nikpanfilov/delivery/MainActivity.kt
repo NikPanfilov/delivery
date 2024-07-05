@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
+import ru.nikpanfilov.delivery.core.ui.compose.Screen
 import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
@@ -21,6 +22,10 @@ class MainActivity : ComponentActivity() {
 		setContent {
 			val navController = rememberNavController()
 			navControllerHolder.setNavController(navController)
+
+			Screen {
+
+			}
 		}
 	}
 
