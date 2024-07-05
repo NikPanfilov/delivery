@@ -5,6 +5,7 @@ import androidx.compose.ui.res.stringResource
 import ru.nikpanfilov.delivery.shared.validators.R
 import ru.nikpanfilov.delivery.shared.validators.domain.ValidationState
 import ru.nikpanfilov.delivery.shared.validators.domain.code.CodeInvalidState
+import ru.nikpanfilov.delivery.shared.validators.domain.empty.EmptyInvalidState
 import ru.nikpanfilov.delivery.shared.validators.domain.phone.PhoneInvalidState
 
 @Composable
@@ -22,4 +23,11 @@ fun getCodeError(state: ValidationState): String? =
 		CodeInvalidState.RESTRICTED_SYMBOLS -> stringResource(R.string.code_restricted_symbols)
 		CodeInvalidState.WRONG_LENGTH       -> stringResource(R.string.code_wrong_length)
 		else                                -> null
+	}
+
+@Composable
+fun getNotEmptyError(state: ValidationState): String? =
+	when ((state as? ValidationState.Invalid)?.invalidState as? EmptyInvalidState) {
+		EmptyInvalidState -> stringResource(R.string.empty)
+		else              -> null
 	}
