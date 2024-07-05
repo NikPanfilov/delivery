@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="empty">Поле является обязательным</string>
+
+	<string name="phone_restricted_symbols">Неверный формат номера</string>
+
+	<string name="code_restricted_symbols">Код может содержать только цифры</string>
+	<string name="code_wrong_length">Код должен состоять из шести цифр</string>
+
+	<string name="name_restricted_symbols">Некорректный формат</string>
+	<string name="name_too_long">Максимальная длина — 60 символов</string>
+	<string name="name_different_alphabets">Значение задано с использованием разных алфавитов</string>
+
+	<string name="address_incorrect_format">Некорректный формат</string>
+	<string name="address_too_long">Максимальная длина — 100 символов</string>
+	<string name="address_different_alphabets">Значение задано с использованием разных алфавитов</string>
+
+	<string name="courier_too_long">Максимальная длина — 300 символов</string>
+
+	<string name="city_restricted_symbols">Некорректный формат</string>
+	<string name="city_too_long">Максимальная длина — 60 символов</string>
+	<string name="city_different_alphabets">Значение задано с использованием разных алфавитов</string>
+
+	<string name="email_incorrect_format">Некорректный формат</string>
+</resources>
