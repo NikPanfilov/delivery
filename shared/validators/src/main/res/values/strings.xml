@@ -14,4 +14,6 @@
 	<string name="address_incorrect_format">Некорректный формат</string>
 	<string name="address_too_long">Максимальная длина — 100 символов</string>
 	<string name="address_different_alphabets">Значение задано с использованием разных алфавитов</string>
+
+	<string name="courier_too_long">Максимальная длина — 300 символов</string>
 </resources>
