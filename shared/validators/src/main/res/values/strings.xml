@@ -3,4 +3,7 @@
 	<string name="empty">Поле является обязательным</string>
 
 	<string name="phone_restricted_symbols">Неверный формат номера</string>
+
+	<string name="code_restricted_symbols">Код может содержать только цифры</string>
+	<string name="code_wrong_length">Код должен состоять из шести цифр</string>
 </resources>
