@@ -4,6 +4,7 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import ru.nikpanfilov.delivery.MainActivity
+import ru.nikpanfilov.delivery.core.error.di.ErrorModule
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.core.network.di.NetworkModule
@@ -15,6 +16,7 @@ import javax.inject.Singleton
 		RoutersModule::class,
 		TokenModule::class,
 		NetworkModule::class,
+		ErrorModule::class,
 	]
 )
 @Singleton
