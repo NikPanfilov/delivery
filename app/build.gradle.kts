@@ -17,6 +17,7 @@ dependencies {
 	implementation(libs.android.core)
 	implementation(libs.compose.activity)
 	implementation(libs.compose.navigation)
+	implementation(libs.compose.material)
 
 	implementation(project(":core:navigation"))
 	implementation(project(":core:token"))
