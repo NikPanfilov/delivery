@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Delivery</string>
+
+    <string name="calculation_section">Расчёт</string>
+    <string name="history_section">История</string>
+    <string name="profile_section">Профиль</string>
 </resources>

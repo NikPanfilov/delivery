@@ -5,6 +5,8 @@ import dagger.Module
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.navigation.GlobalRouterImpl
+import ru.nikpanfilov.delivery.navigation.MainRouterImpl
+import ru.nikpanfilov.delivery.presentation.MainRouter
 import javax.inject.Singleton
 
 @Module
@@ -17,4 +19,7 @@ interface RoutersModule {
 	@Binds
 	@Singleton
 	fun bindNavControllerHolder(globalRouterImpl: GlobalRouterImpl): NavControllerHolder
+
+	@Binds
+	fun bindMainRouter(mainRouterImpl: MainRouterImpl): MainRouter
 }

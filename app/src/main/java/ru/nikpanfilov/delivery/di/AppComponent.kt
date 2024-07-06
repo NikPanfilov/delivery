@@ -9,6 +9,7 @@ import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.core.network.di.NetworkModule
 import ru.nikpanfilov.delivery.core.token.di.TokenModule
+import ru.nikpanfilov.delivery.presentation.MainViewModel
 import javax.inject.Singleton
 
 @Component(
@@ -36,4 +37,6 @@ interface AppComponent {
 	val globalRouter: GlobalRouter
 
 	val navControllerHolder: NavControllerHolder
+
+	val mainViewModel: MainViewModel.Factory
 }
