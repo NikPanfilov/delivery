@@ -25,4 +25,5 @@ dependencies {
 	implementation(project(":core:ui"))
 	implementation(project(":core:presentation"))
 	implementation(project(":core:error"))
+	implementation(project(":shared:cities"))
 }

@@ -10,6 +10,7 @@ import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.core.network.di.NetworkModule
 import ru.nikpanfilov.delivery.core.token.di.TokenModule
 import ru.nikpanfilov.delivery.presentation.MainViewModel
+import ru.nikpanfilov.delivery.shared.cities.di.CitiesModule
 import javax.inject.Singleton
 
 @Component(
@@ -18,6 +19,7 @@ import javax.inject.Singleton
 		TokenModule::class,
 		NetworkModule::class,
 		ErrorModule::class,
+		CitiesModule::class,
 	]
 )
 @Singleton
