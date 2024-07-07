@@ -51,8 +51,8 @@ class MainActivity : ComponentActivity() {
 		}
 	}
 
-	override fun onPause() {
-		super.onPause()
+	override fun onDestroy() {
 		navControllerHolder.removeNavController()
+		super.onDestroy()
 	}
 }
