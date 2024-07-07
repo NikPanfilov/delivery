@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="calculate_delivery">Рассчитать доставку</string>
+
+	<string name="sender_city">Город отправки</string>
+	<string name="receiver_city">Город назначения</string>
+	<string name="package_size">Размер посылки</string>
+
+	<string name="calculate">Рассчитать</string>
+</resources>
