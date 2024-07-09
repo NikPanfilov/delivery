@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="sign_in">Вход</string>
+	<string name="helper_text">Введите номер телефона для входа в личный кабинет</string>
+	<string name="phone">Телефон</string>
+	<string name="change_phone">Изменить телефон</string>
+	<string name="code">Проверочный код</string>
+	<string name="resend_code">Отправить ещё раз</string>
+	<string name="resend_code_after">Отправить код повторно через %1$s сек</string>
+	<string name="enter">Войти</string>
+</resources>
