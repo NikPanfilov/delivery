@@ -15,6 +15,7 @@ dependencies {
 	implementation(project(":core:token"))
 	implementation(project(":core:network"))
 	implementation(project(":core:navigation"))
+	implementation(project(":core:error"))
 	implementation(project(":shared:cities"))
 	implementation(project(":shared:deliveryinfo"))
 

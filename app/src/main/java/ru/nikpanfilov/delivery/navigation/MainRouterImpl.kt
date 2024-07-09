@@ -1,6 +1,7 @@
 package ru.nikpanfilov.delivery.navigation
 
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
+import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDestination
 import ru.nikpanfilov.delivery.presentation.MainRouter
 import javax.inject.Inject
 
@@ -9,7 +10,7 @@ class MainRouterImpl @Inject constructor(
 ) : MainRouter {
 
 	override fun navigateToCalculation() {
-		//Добавить экран расчётов
+		router.navigateTo(CalculationDestination)
 	}
 
 	override fun navigateToHistory() {

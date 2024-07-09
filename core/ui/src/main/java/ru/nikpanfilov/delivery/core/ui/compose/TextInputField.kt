@@ -54,6 +54,7 @@ fun TextInputField(
 	enabled: Boolean = true,
 	readOnly: Boolean = false,
 	leadingIconId: Int? = null,
+	trailingIconId: Int? = null,
 	visualTransformation: VisualTransformation = VisualTransformation.None,
 	keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 	keyboardActions: KeyboardActions = KeyboardActions.Default,
@@ -87,8 +88,8 @@ fun TextInputField(
 				colors = textInputFieldColors(),
 				isError = errorVisible,
 				shape = MaterialTheme.shapes.medium,
-				leadingIcon = getLeadingIcon(leadingIconId),
-				trailingIcon = getErrorIcon(errorVisible),
+				leadingIcon = getIcon(leadingIconId),
+				trailingIcon = getErrorIcon(errorVisible) ?: getIcon(trailingIconId),
 				visualTransformation = visualTransformation,
 				keyboardOptions = keyboardOptions,
 				keyboardActions = keyboardActions,
@@ -159,7 +160,7 @@ fun TextInputField(
 				colors = textInputFieldColors(),
 				isError = errorVisible,
 				shape = MaterialTheme.shapes.medium,
-				leadingIcon = getLeadingIcon(leadingIconId),
+				leadingIcon = getIcon(leadingIconId),
 				trailingIcon = getErrorIcon(errorVisible),
 				visualTransformation = visualTransformation,
 				keyboardOptions = keyboardOptions,
@@ -220,8 +221,8 @@ private fun textInputFieldColors(): TextFieldColors =
 	)
 
 @Composable
-private fun getLeadingIcon(leadingIconId: Int?): @Composable (() -> Unit)? =
-	leadingIconId?.let {
+private fun getIcon(iconId: Int?): @Composable (() -> Unit)? =
+	iconId?.let {
 		{
 			Icon(
 				painter = painterResource(id = it),
@@ -279,12 +280,23 @@ private fun TextInputFieldPreview() {
 		Column {
 			TextInputField(
 				text = text,
-				label = "Почта",
+				label = "",
 				onValueChanged = { text = it },
 				errorMessage = errorText,
 				leadingIconId = R.drawable.ic_mail,
 				modifier = Modifier.padding(bottom = 20.dp),
 				keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+				enabled = false,
+			)
+			TextInputField(
+				text = text,
+				label = "",
+				onValueChanged = { text = it },
+				errorMessage = errorText,
+				leadingIconId = R.drawable.ic_mail,
+				modifier = Modifier.padding(bottom = 20.dp),
+				keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+				readOnly = true,
 			)
 
 			LoadingTextInputField()

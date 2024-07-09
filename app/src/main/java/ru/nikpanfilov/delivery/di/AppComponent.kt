@@ -10,6 +10,7 @@ import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.core.network.di.NetworkModule
 import ru.nikpanfilov.delivery.core.token.di.TokenModule
 import ru.nikpanfilov.delivery.feature.calculation.di.CalculationModule
+import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationViewModel
 import ru.nikpanfilov.delivery.presentation.MainViewModel
 import ru.nikpanfilov.delivery.shared.cities.di.CitiesModule
 import javax.inject.Singleton
@@ -43,4 +44,5 @@ interface AppComponent {
 	val navControllerHolder: NavControllerHolder
 
 	val mainViewModel: MainViewModel.Factory
+	val calculationViewModel: CalculationViewModel.Factory
 }

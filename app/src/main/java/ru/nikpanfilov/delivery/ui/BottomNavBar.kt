@@ -14,15 +14,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import ru.nikpanfilov.delivery.R
 import ru.nikpanfilov.delivery.core.navigation.Destination
 import ru.nikpanfilov.delivery.core.ui.compose.LabelSmallText
+import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDestination
 
 data class NavigationItem(
 	val title: String,
 	val destination: Destination,
 	@DrawableRes val selectedIcon: Int,
 	@DrawableRes val unselectedIcon: Int,
-	val navigateToSection: () -> Unit,
+	val onClick: () -> Unit,
 )
 
 @Composable
@@ -35,8 +37,14 @@ internal fun NavBar(
 ) {
 	val context = LocalContext.current
 	val navigationItemsList = remember {
-		listOf<NavigationItem>(
-			//TODO(Добавить сюда экраны по мере их появления)
+		listOf(
+			NavigationItem(
+				title = context.getString(R.string.calculation_section),
+				destination = CalculationDestination,
+				selectedIcon = R.drawable.ic_calc_filled,
+				unselectedIcon = R.drawable.ic_calc,
+				onClick = onOpenCalculation,
+			)
 		)
 	}
 
@@ -51,7 +59,7 @@ internal fun NavBar(
 				label = {
 					LabelSmallText(text = it.title)
 				},
-				onClick = it.navigateToSection,
+				onClick = it.onClick,
 				colors = NavigationBarItemDefaults.colors(
 					selectedIconColor = MaterialTheme.colorScheme.primary,
 					selectedTextColor = MaterialTheme.colorScheme.primary,
