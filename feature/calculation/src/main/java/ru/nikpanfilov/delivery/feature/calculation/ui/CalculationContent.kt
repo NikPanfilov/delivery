@@ -76,6 +76,16 @@ internal fun CalculationContent(
 				)
 			}
 		}
+
+		ChangeDetails(
+			detailsChange = state.detailsChange,
+			deliveryPoints = state.deliveryPointOptions,
+			packageTypes = state.packageTypeOptions,
+			onCancelChangeDetails = { applyIntent(CalculationIntent.CancelChangeDetails) },
+			onSetSenderCity = { applyIntent(CalculationIntent.SetSenderCity(it)) },
+			onSetReceiverCity = { applyIntent(CalculationIntent.SetReceiverCity(it)) },
+			onSetPackageType = { applyIntent(CalculationIntent.SetPackageType(it)) },
+		)
 	}
 }
 
