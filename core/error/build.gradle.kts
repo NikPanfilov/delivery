@@ -14,5 +14,6 @@ android {
 dependencies {
 	implementation(libs.retrofit)
 	implementation(libs.moshi)
+	kapt(libs.moshi.codegen)
 	implementation(libs.coroutine.core)
 }
