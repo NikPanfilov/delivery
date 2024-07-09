@@ -17,6 +17,7 @@ dependencies {
 	implementation(project(":core:error"))
 
 	implementation(project(":shared:validators"))
+	implementation(project(":shared:user"))
 
 	implementation(libs.compose.ui)
 	implementation(libs.compose.material)
