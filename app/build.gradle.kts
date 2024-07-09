@@ -28,7 +28,9 @@ dependencies {
 	implementation(project(":shared:cities"))
 	implementation(project(":shared:deliveryinfo"))
 	implementation(project(":shared:validators"))
+	implementation(project(":shared:user"))
 
 	implementation(project(":feature:calculation"))
 	implementation(project(":feature:signin"))
+	implementation(project(":feature:profile"))
 }
