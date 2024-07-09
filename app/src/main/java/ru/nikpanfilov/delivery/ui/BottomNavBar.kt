@@ -22,7 +22,7 @@ data class NavigationItem(
 	val destination: Destination,
 	@DrawableRes val selectedIcon: Int,
 	@DrawableRes val unselectedIcon: Int,
-	val navigateToSection: () -> Unit,
+	val onClick: () -> Unit,
 )
 
 @Composable
@@ -51,7 +51,7 @@ internal fun NavBar(
 				label = {
 					LabelSmallText(text = it.title)
 				},
-				onClick = it.navigateToSection,
+				onClick = it.onClick,
 				colors = NavigationBarItemDefaults.colors(
 					selectedIconColor = MaterialTheme.colorScheme.primary,
 					selectedTextColor = MaterialTheme.colorScheme.primary,
