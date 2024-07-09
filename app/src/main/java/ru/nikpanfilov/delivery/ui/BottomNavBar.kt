@@ -55,6 +55,10 @@ internal fun NavBar(
 		)
 	}
 
+	if (currentScreen !in navigationItemsList.map { it.destination }) {
+		return
+	}
+
 	NavigationBar(
 		containerColor = MaterialTheme.colorScheme.background,
 		contentColor = MaterialTheme.colorScheme.primary,
