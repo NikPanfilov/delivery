@@ -44,7 +44,14 @@ internal fun NavBar(
 				selectedIcon = R.drawable.ic_calc_filled,
 				unselectedIcon = R.drawable.ic_calc,
 				onClick = onOpenCalculation,
-			)
+			),
+			NavigationItem(
+				title = context.getString(R.string.profile_section),
+				destination = CalculationDestination,//TODO(Заменить на ProfileDestination когда оно будет)
+				selectedIcon = R.drawable.ic_profile_filled,
+				unselectedIcon = R.drawable.ic_profile,
+				onClick = onOpenOpenProfile,
+			),
 		)
 	}
 

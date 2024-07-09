@@ -17,6 +17,8 @@ import ru.nikpanfilov.delivery.core.presentation.lazyViewModel
 import ru.nikpanfilov.delivery.core.ui.compose.Screen
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDestination
 import ru.nikpanfilov.delivery.feature.calculation.ui.CalculationScreen
+import ru.nikpanfilov.delivery.feature.signin.SignInDestination
+import ru.nikpanfilov.delivery.feature.signin.ui.SignInScreen
 import ru.nikpanfilov.delivery.presentation.MainIntent
 import ru.nikpanfilov.delivery.ui.NavBar
 import javax.inject.Inject
@@ -32,6 +34,10 @@ class MainActivity : ComponentActivity() {
 
 	private val calculationViewModel by lazyViewModel { stateHandle ->
 		(applicationContext as App).appComponent.calculationViewModel.create(stateHandle)
+	}
+
+	private val signInViewModel by lazyViewModel { stateHandle ->
+		(applicationContext as App).appComponent.signInViewModel.create(stateHandle)
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,6 +73,15 @@ class MainActivity : ComponentActivity() {
 							CalculationScreen(
 								state = state.value,
 								applyIntent = { calculationViewModel.applyIntent(it) },
+							)
+						}
+						composable<SignInDestination> {
+							mainViewModel.applyIntent(MainIntent.SetOpenedScreen(SignInDestination))
+							val state = signInViewModel.uiState.collectAsState()
+
+							SignInScreen(
+								state = state.value,
+								applyIntent = { signInViewModel.applyIntent(it) },
 							)
 						}
 					}

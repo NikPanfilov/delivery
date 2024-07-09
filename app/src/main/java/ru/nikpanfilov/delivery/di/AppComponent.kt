@@ -12,6 +12,7 @@ import ru.nikpanfilov.delivery.core.token.di.TokenModule
 import ru.nikpanfilov.delivery.feature.calculation.di.CalculationModule
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationViewModel
 import ru.nikpanfilov.delivery.feature.signin.di.SignInModule
+import ru.nikpanfilov.delivery.feature.signin.presentation.SignInViewModel
 import ru.nikpanfilov.delivery.presentation.MainViewModel
 import ru.nikpanfilov.delivery.shared.cities.di.CitiesModule
 import javax.inject.Singleton
@@ -47,4 +48,5 @@ interface AppComponent {
 
 	val mainViewModel: MainViewModel.Factory
 	val calculationViewModel: CalculationViewModel.Factory
+	val signInViewModel: SignInViewModel.Factory
 }
