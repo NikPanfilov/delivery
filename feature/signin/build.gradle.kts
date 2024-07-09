@@ -17,6 +17,8 @@ dependencies {
 	implementation(project(":core:error"))
 	implementation(project(":core:token"))
 
+	implementation(project(":shared:validators"))
+
 	implementation(libs.compose.ui)
 	implementation(libs.compose.material)
 	implementation(libs.compose.preview)
