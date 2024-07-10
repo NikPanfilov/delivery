@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="lastname_label">Фамилия</string>
+	<string name="firstname_label">Имя</string>
+	<string name="middlename_label">Отчество</string>
+	<string name="city_label">Город</string>
+	<string name="phone_label">Номер телефона</string>
+	<string name="email_label">Email</string>
+
+	<string name="save_data">Обновить данные</string>
+</resources>
