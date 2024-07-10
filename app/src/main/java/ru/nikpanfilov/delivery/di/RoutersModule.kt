@@ -5,10 +5,12 @@ import dagger.Module
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationRouter
+import ru.nikpanfilov.delivery.feature.profile.presentation.ProfileRouter
 import ru.nikpanfilov.delivery.feature.signin.presentation.SignInRouter
 import ru.nikpanfilov.delivery.navigation.CalculationRouterImpl
 import ru.nikpanfilov.delivery.navigation.GlobalRouterImpl
 import ru.nikpanfilov.delivery.navigation.MainRouterImpl
+import ru.nikpanfilov.delivery.navigation.ProfileRouterImpl
 import ru.nikpanfilov.delivery.navigation.SignInRouterImpl
 import ru.nikpanfilov.delivery.presentation.MainRouter
 import javax.inject.Singleton
@@ -31,5 +33,8 @@ interface RoutersModule {
 	fun bindCalculationRouter(calculationRouterImpl: CalculationRouterImpl): CalculationRouter
 
 	@Binds
-	fun bindSignInnRouter(signInRouterImpl: SignInRouterImpl): SignInRouter
+	fun bindSignInRouter(signInRouterImpl: SignInRouterImpl): SignInRouter
+
+	@Binds
+	fun bindProfileRouter(profileRouterImpl: ProfileRouterImpl): ProfileRouter
 }
