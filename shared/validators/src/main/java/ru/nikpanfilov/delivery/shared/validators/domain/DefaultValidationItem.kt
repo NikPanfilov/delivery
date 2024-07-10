@@ -7,4 +7,4 @@ data class DefaultValidationItem(
 )
 
 fun DefaultValidationItem.isValid(): Boolean = this.validationState is ValidationState.Valid ||
-	(this.optional && this.validationState is ValidationState.Unverified)
+	(this.optional && data.isEmpty())
