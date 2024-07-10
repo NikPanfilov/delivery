@@ -5,6 +5,6 @@ sealed class NetworkError {
 
 	data class ErrorMessage(
 		val statusCode: Int,
-		val message: List<String>,
+		val message: String,
 	) : NetworkError()
 }

@@ -18,6 +18,7 @@ import ru.nikpanfilov.delivery.R
 import ru.nikpanfilov.delivery.core.navigation.Destination
 import ru.nikpanfilov.delivery.core.ui.compose.LabelSmallText
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDestination
+import ru.nikpanfilov.delivery.feature.profile.ProfileDestination
 
 data class NavigationItem(
 	val title: String,
@@ -47,7 +48,7 @@ internal fun NavBar(
 			),
 			NavigationItem(
 				title = context.getString(R.string.profile_section),
-				destination = CalculationDestination,//TODO(Заменить на ProfileDestination когда оно будет)
+				destination = ProfileDestination,
 				selectedIcon = R.drawable.ic_profile_filled,
 				unselectedIcon = R.drawable.ic_profile,
 				onClick = onOpenOpenProfile,

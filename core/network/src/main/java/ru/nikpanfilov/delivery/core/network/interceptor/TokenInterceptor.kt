@@ -20,7 +20,7 @@ class TokenInterceptor @Inject constructor(
 	override fun intercept(chain: Interceptor.Chain): Response {
 		if (isTokenExistUseCase()) {
 			val requestBuilder: Request.Builder = chain.request().newBuilder()
-				.addHeader(TOKEN_HEADER, getTokenUseCase())
+				.addHeader(TOKEN_HEADER, "Bearer ${getTokenUseCase()}")
 			val request: Request = requestBuilder.build()
 
 			return chain.proceed(request)

@@ -11,10 +11,13 @@ import ru.nikpanfilov.delivery.core.network.di.NetworkModule
 import ru.nikpanfilov.delivery.core.token.di.TokenModule
 import ru.nikpanfilov.delivery.feature.calculation.di.CalculationModule
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationViewModel
+import ru.nikpanfilov.delivery.feature.profile.di.ProfileModule
+import ru.nikpanfilov.delivery.feature.profile.presentation.ProfileViewModel
 import ru.nikpanfilov.delivery.feature.signin.di.SignInModule
 import ru.nikpanfilov.delivery.feature.signin.presentation.SignInViewModel
 import ru.nikpanfilov.delivery.presentation.MainViewModel
 import ru.nikpanfilov.delivery.shared.cities.di.CitiesModule
+import ru.nikpanfilov.delivery.shared.user.di.UserModule
 import javax.inject.Singleton
 
 @Component(
@@ -26,6 +29,8 @@ import javax.inject.Singleton
 		CitiesModule::class,
 		CalculationModule::class,
 		SignInModule::class,
+		UserModule::class,
+		ProfileModule::class,
 	]
 )
 @Singleton
@@ -49,4 +54,5 @@ interface AppComponent {
 	val mainViewModel: MainViewModel.Factory
 	val calculationViewModel: CalculationViewModel.Factory
 	val signInViewModel: SignInViewModel.Factory
+	val profileViewModel: ProfileViewModel.Factory
 }

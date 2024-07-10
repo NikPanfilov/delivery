@@ -23,5 +23,5 @@ private fun HttpException.getHttpErrorMessage(): NetworkError =
 private fun getErrorWithoutBody(statusCode: Int): NetworkError.ErrorMessage =
 	NetworkError.ErrorMessage(
 		statusCode = statusCode,
-		message = emptyList(),
+		message = "",
 	)
