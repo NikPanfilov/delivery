@@ -17,6 +17,8 @@ import ru.nikpanfilov.delivery.core.presentation.lazyViewModel
 import ru.nikpanfilov.delivery.core.ui.compose.Screen
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDestination
 import ru.nikpanfilov.delivery.feature.calculation.ui.CalculationScreen
+import ru.nikpanfilov.delivery.feature.profile.ProfileDestination
+import ru.nikpanfilov.delivery.feature.profile.ui.ProfileScreen
 import ru.nikpanfilov.delivery.feature.signin.SignInDestination
 import ru.nikpanfilov.delivery.feature.signin.ui.SignInScreen
 import ru.nikpanfilov.delivery.presentation.MainIntent
@@ -38,6 +40,10 @@ class MainActivity : ComponentActivity() {
 
 	private val signInViewModel by lazyViewModel { stateHandle ->
 		(applicationContext as App).appComponent.signInViewModel.create(stateHandle)
+	}
+
+	private val profileViewModel by lazyViewModel { stateHandle ->
+		(applicationContext as App).appComponent.profileViewModel.create(stateHandle)
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,6 +88,15 @@ class MainActivity : ComponentActivity() {
 							SignInScreen(
 								state = state.value,
 								applyIntent = { signInViewModel.applyIntent(it) },
+							)
+						}
+						composable<ProfileDestination> {
+							mainViewModel.applyIntent(MainIntent.SetOpenedScreen(ProfileDestination))
+							val state = profileViewModel.uiState.collectAsState()
+
+							ProfileScreen(
+								state = state.value,
+								applyIntent = { profileViewModel.applyIntent(it) },
 							)
 						}
 					}

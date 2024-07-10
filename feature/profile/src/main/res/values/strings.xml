@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="profile">Профиль</string>
+
 	<string name="lastname_label">Фамилия</string>
 	<string name="firstname_label">Имя</string>
 	<string name="middlename_label">Отчество</string>
