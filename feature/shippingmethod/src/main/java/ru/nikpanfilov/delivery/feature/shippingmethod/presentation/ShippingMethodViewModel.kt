@@ -18,6 +18,19 @@ class ShippingMethodViewModel @AssistedInject constructor(
 	override fun initState(): ShippingMethodState = ShippingMethodState(deliveryOptions)
 
 	override fun applyIntent(intent: ShippingMethodIntent) {
+		when (intent) {
+			is ShippingMethodIntent.ChooseDeliveryOption -> handleChooseDeliveryOption(intent.option)
+			is ShippingMethodIntent.NavigateBack         -> handleNavigateBack()
+		}
+	}
+
+	private fun handleChooseDeliveryOption(option: DeliveryOption) {
+		saveDeliveryOptionUseCase(option)
+		router.navigateToSenderInfo()
+	}
+
+	private fun handleNavigateBack() {
+		router.navigateBack()
 	}
 
 	@AssistedFactory
