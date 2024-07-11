@@ -8,12 +8,15 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import ru.nikpanfilov.delivery.core.ui.compose.AppBar
 import ru.nikpanfilov.delivery.core.ui.compose.Error
 import ru.nikpanfilov.delivery.feature.profile.R
 import ru.nikpanfilov.delivery.feature.profile.presentation.ProfileIntent
 import ru.nikpanfilov.delivery.feature.profile.presentation.ProfileState
+import ru.nikpanfilov.delivery.core.ui.R as ComponentR
 
 @Composable
 fun ProfileScreen(
@@ -24,6 +27,7 @@ fun ProfileScreen(
 		topBar = {
 			AppBar(
 				title = stringResource(R.string.profile),
+				leftIcon = ImageVector.vectorResource(ComponentR.drawable.ic_arrow_back),
 				onLeftButtonClick = { applyIntent(ProfileIntent.NavigateBack) },
 			)
 		}
