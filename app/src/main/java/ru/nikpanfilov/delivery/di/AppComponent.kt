@@ -19,6 +19,7 @@ import ru.nikpanfilov.delivery.feature.signin.presentation.SignInViewModel
 import ru.nikpanfilov.delivery.presentation.MainViewModel
 import ru.nikpanfilov.delivery.shared.cities.di.CitiesModule
 import ru.nikpanfilov.delivery.shared.deliveryinfo.di.DeliveryOptionModule
+import ru.nikpanfilov.delivery.shared.deliveryinfo.di.PersonalInfoModule
 import ru.nikpanfilov.delivery.shared.user.di.UserModule
 import javax.inject.Singleton
 
@@ -34,6 +35,7 @@ import javax.inject.Singleton
 		UserModule::class,
 		ProfileModule::class,
 		DeliveryOptionModule::class,
+		PersonalInfoModule::class,
 	]
 )
 @Singleton
