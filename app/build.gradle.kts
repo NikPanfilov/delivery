@@ -33,4 +33,5 @@ dependencies {
 	implementation(project(":feature:calculation"))
 	implementation(project(":feature:signin"))
 	implementation(project(":feature:profile"))
+	implementation(project(":feature:shippingmethod"))
 }

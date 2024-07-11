@@ -8,10 +8,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import kotlinx.serialization.json.Json
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.core.presentation.lazyViewModel
 import ru.nikpanfilov.delivery.core.ui.compose.Screen
@@ -19,6 +22,8 @@ import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDesti
 import ru.nikpanfilov.delivery.feature.calculation.ui.CalculationScreen
 import ru.nikpanfilov.delivery.feature.profile.ProfileDestination
 import ru.nikpanfilov.delivery.feature.profile.ui.ProfileScreen
+import ru.nikpanfilov.delivery.feature.shippingmethod.ShippingMethodDestination
+import ru.nikpanfilov.delivery.feature.shippingmethod.ui.ShippingMethodScreen
 import ru.nikpanfilov.delivery.feature.signin.SignInDestination
 import ru.nikpanfilov.delivery.feature.signin.ui.SignInScreen
 import ru.nikpanfilov.delivery.presentation.MainIntent
@@ -97,6 +102,25 @@ class MainActivity : ComponentActivity() {
 							ProfileScreen(
 								state = state.value,
 								applyIntent = { profileViewModel.applyIntent(it) },
+							)
+						}
+						composable<ShippingMethodDestination> {
+							val dest = it.toRoute<ShippingMethodDestination>()
+							val shippingMethodViewModel = remember {
+								lazyViewModel { stateHandle ->
+									(applicationContext as App).appComponent.shippingMethodViewModel.create(
+										stateHandle,
+										Json.decodeFromString(dest.deliveryOptions)
+									)
+								}
+							}
+
+							mainViewModel.applyIntent(MainIntent.SetOpenedScreen(dest))
+							val state = shippingMethodViewModel.value.uiState.collectAsState()
+
+							ShippingMethodScreen(
+								state = state.value,
+								applyIntent = { shippingMethodViewModel.value.applyIntent(it) },
 							)
 						}
 					}

@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 abstract class BaseViewModel<S : State, I : Intent> : ViewModel() {
 
 	private val _uiState by lazy { MutableStateFlow(initState()) }
-	val uiState = _uiState
+	val uiState by lazy { _uiState }
 
 	protected abstract fun initState(): S
 

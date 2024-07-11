@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="shipping_method">Способ отправки</string>
+
+	<string name="price">%1$s \u20BD</string>
+	<string name="days">%1$s рабочих дней</string>
+</resources>

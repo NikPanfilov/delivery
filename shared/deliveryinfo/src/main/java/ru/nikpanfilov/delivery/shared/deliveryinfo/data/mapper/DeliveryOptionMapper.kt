@@ -14,3 +14,11 @@ fun DeliveryOptionDto.toEntity(): DeliveryOption = DeliveryOption(
 	name = name,
 	type = DeliveryType.entries.find { it.name == type } ?: error("DeliverType does not exists"),
 )
+
+fun DeliveryOption.toDto(): DeliveryOptionDto = DeliveryOptionDto(
+	id = id,
+	price = price,
+	days = days,
+	name = name,
+	type = type.name,
+)

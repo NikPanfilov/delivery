@@ -1,5 +1,6 @@
 package ru.nikpanfilov.delivery.core.ui.compose
 
+import android.view.MotionEvent
 import androidx.compose.foundation.ScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -8,8 +9,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.input.pointer.pointerInteropFilter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.positionInParent
 import kotlinx.coroutines.launch
@@ -33,4 +36,14 @@ fun Modifier.scrollToElement(scrollState: ScrollState): Modifier {
 		.onFocusChanged {
 			focused = it.isFocused
 		}
+}
+
+@OptIn(ExperimentalComposeUiApi::class)
+@Composable
+fun Modifier.clickableArea(onClick: () -> Unit): Modifier = this.pointerInteropFilter {
+	(it.action == MotionEvent.ACTION_DOWN).also {
+		if (it) {
+			onClick()
+		}
+	}
 }
