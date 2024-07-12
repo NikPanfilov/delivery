@@ -22,4 +22,5 @@ dependencies {
 	implementation(libs.compose.preview)
 	implementation(libs.compose.tooling)
 	implementation(libs.android.core)
+	implementation(libs.compose.activity)
 }
