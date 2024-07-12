@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-	namespace = "ru.nikpanfilov.delivery.feature.senderinfo"
+	namespace = "ru.nikpanfilov.delivery.feature.personalinfo"
 }
 
 dependencies {
