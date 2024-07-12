@@ -18,6 +18,8 @@ import kotlinx.serialization.json.Json
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.core.presentation.lazyViewModel
 import ru.nikpanfilov.delivery.core.ui.compose.Screen
+import ru.nikpanfilov.delivery.feature.addressinfo.AddressInfoDestination
+import ru.nikpanfilov.delivery.feature.addressinfo.ui.AddressInfoScreen
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDestination
 import ru.nikpanfilov.delivery.feature.calculation.ui.CalculationScreen
 import ru.nikpanfilov.delivery.feature.personalinfo.PersonalInfoDestination
@@ -55,6 +57,10 @@ class MainActivity : ComponentActivity() {
 
 	private val personalInfoViewModel by lazyViewModel { stateHandle ->
 		(applicationContext as App).appComponent.personalInfoViewModel.create(stateHandle)
+	}
+
+	private val addressInfoViewModel by lazyViewModel { stateHandle ->
+		(applicationContext as App).appComponent.addressInfoViewModel.create(stateHandle)
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -136,6 +142,15 @@ class MainActivity : ComponentActivity() {
 							PersonalInfoScreen(
 								state = state.value,
 								applyIntent = { personalInfoViewModel.applyIntent(it) },
+							)
+						}
+						composable<AddressInfoDestination> {
+							mainViewModel.applyIntent(MainIntent.SetOpenedScreen(AddressInfoDestination))
+							val state = addressInfoViewModel.uiState.collectAsState()
+
+							AddressInfoScreen(
+								state = state.value,
+								applyIntent = { addressInfoViewModel.applyIntent(it) },
 							)
 						}
 					}

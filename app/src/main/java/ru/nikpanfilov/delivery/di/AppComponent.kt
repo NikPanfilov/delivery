@@ -9,6 +9,7 @@ import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
 import ru.nikpanfilov.delivery.core.network.di.NetworkModule
 import ru.nikpanfilov.delivery.core.token.di.TokenModule
+import ru.nikpanfilov.delivery.feature.addressinfo.presentation.AddressInfoViewModel
 import ru.nikpanfilov.delivery.feature.calculation.di.CalculationModule
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationViewModel
 import ru.nikpanfilov.delivery.feature.personalinfo.presentation.PersonalInfoViewModel
@@ -65,4 +66,5 @@ interface AppComponent {
 	val profileViewModel: ProfileViewModel.Factory
 	val shippingMethodViewModel: ShippingMethodViewModel.Factory
 	val personalInfoViewModel: PersonalInfoViewModel.Factory
+	val addressInfoViewModel: AddressInfoViewModel.Factory
 }

@@ -1,6 +1,7 @@
 package ru.nikpanfilov.delivery.navigation
 
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
+import ru.nikpanfilov.delivery.feature.addressinfo.AddressInfoDestination
 import ru.nikpanfilov.delivery.feature.personalinfo.presentation.PersonalInfoRouter
 import javax.inject.Inject
 
@@ -13,6 +14,6 @@ class PersonalInfoRouterImpl @Inject constructor(
 	}
 
 	override fun navigateToAddressInfo() {
-		//TODO(Добавить переход)
+		router.navigateTo(AddressInfoDestination)
 	}
 }
