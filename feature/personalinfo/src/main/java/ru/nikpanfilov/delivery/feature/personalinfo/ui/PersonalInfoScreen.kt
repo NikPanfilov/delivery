@@ -1,5 +1,6 @@
 package ru.nikpanfilov.delivery.feature.personalinfo.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -51,5 +52,9 @@ fun PersonalInfoScreen(
 				is PersonalInfoState.Error   -> Error(onTryAgain = { applyIntent(PersonalInfoIntent.LoadData) })
 			}
 		}
+	}
+
+	BackHandler {
+		applyIntent(PersonalInfoIntent.NavigateBack)
 	}
 }
