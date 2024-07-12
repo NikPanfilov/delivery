@@ -8,13 +8,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import ru.nikpanfilov.delivery.core.ui.compose.AppBar
 import ru.nikpanfilov.delivery.core.ui.compose.Error
 import ru.nikpanfilov.delivery.feature.signin.R
 import ru.nikpanfilov.delivery.feature.signin.presentation.LoadingStatus
 import ru.nikpanfilov.delivery.feature.signin.presentation.SignInIntent
 import ru.nikpanfilov.delivery.feature.signin.presentation.SignInState
+import ru.nikpanfilov.delivery.core.ui.R as ComponentR
 
 @Composable
 fun SignInScreen(
@@ -25,7 +28,7 @@ fun SignInScreen(
 		topBar = {
 			AppBar(
 				title = stringResource(R.string.sign_in),
-				leftIcon = null,
+				leftIcon = ImageVector.vectorResource(ComponentR.drawable.ic_dismiss),
 				onLeftButtonClick = {
 					applyIntent(SignInIntent.NavigateBack)
 				},
