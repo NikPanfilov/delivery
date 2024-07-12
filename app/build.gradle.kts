@@ -35,4 +35,5 @@ dependencies {
 	implementation(project(":feature:profile"))
 	implementation(project(":feature:shippingmethod"))
 	implementation(project(":feature:personalinfo"))
+	implementation(project(":feature:addressinfo"))
 }

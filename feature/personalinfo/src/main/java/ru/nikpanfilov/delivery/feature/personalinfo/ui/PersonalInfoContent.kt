@@ -12,9 +12,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ru.nikpanfilov.delivery.core.ui.compose.CustomButton
 import ru.nikpanfilov.delivery.core.ui.compose.TextInputField
+import ru.nikpanfilov.delivery.feature.personalinfo.R
 import ru.nikpanfilov.delivery.feature.personalinfo.presentation.PersonalInfoIntent
 import ru.nikpanfilov.delivery.feature.personalinfo.presentation.PersonalInfoState
-import ru.nikpanfilov.delivery.feature.senderinfo.R
 import ru.nikpanfilov.delivery.shared.validators.ui.getNameError
 
 @Composable

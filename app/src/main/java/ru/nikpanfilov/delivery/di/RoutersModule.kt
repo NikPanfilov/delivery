@@ -4,11 +4,13 @@ import dagger.Binds
 import dagger.Module
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
 import ru.nikpanfilov.delivery.core.navigation.NavControllerHolder
+import ru.nikpanfilov.delivery.feature.addressinfo.presentation.AddressInfoRouter
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationRouter
 import ru.nikpanfilov.delivery.feature.personalinfo.presentation.PersonalInfoRouter
 import ru.nikpanfilov.delivery.feature.profile.presentation.ProfileRouter
 import ru.nikpanfilov.delivery.feature.shippingmethod.presentation.ShippingMethodRouter
 import ru.nikpanfilov.delivery.feature.signin.presentation.SignInRouter
+import ru.nikpanfilov.delivery.navigation.AddressInfoRouterImpl
 import ru.nikpanfilov.delivery.navigation.CalculationRouterImpl
 import ru.nikpanfilov.delivery.navigation.GlobalRouterImpl
 import ru.nikpanfilov.delivery.navigation.MainRouterImpl
@@ -47,4 +49,7 @@ interface RoutersModule {
 
 	@Binds
 	fun bindPersonalInfoRouter(personalInfoRouterImpl: PersonalInfoRouterImpl): PersonalInfoRouter
+
+	@Binds
+	fun bindAddressInfoRouter(addressInfoRouterImpl: AddressInfoRouterImpl): AddressInfoRouter
 }

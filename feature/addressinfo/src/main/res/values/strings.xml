@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="sender_address">Откуда забрать</string>
+	<string name="receiver_address">Куда доставить</string>
+
+	<string name="street">Улица</string>
+	<string name="house">Дом</string>
+	<string name="apartment">Квартира</string>
+	<string name="courier_note">Заметка для курьера</string>
+	<string name="next">Продолжить</string>
+</resources>
