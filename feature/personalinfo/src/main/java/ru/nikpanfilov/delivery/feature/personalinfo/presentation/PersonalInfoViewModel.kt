@@ -16,8 +16,10 @@ import ru.nikpanfilov.delivery.shared.deliveryinfo.domain.usecase.LoadSenderInfo
 import ru.nikpanfilov.delivery.shared.deliveryinfo.domain.usecase.SaveReceiverInfoUseCase
 import ru.nikpanfilov.delivery.shared.deliveryinfo.domain.usecase.SaveSenderInfoUseCase
 import ru.nikpanfilov.delivery.shared.user.domain.usecase.GetUserUseCase
+import ru.nikpanfilov.delivery.shared.validators.domain.DefaultValidationItem
 import ru.nikpanfilov.delivery.shared.validators.domain.isValid
 import ru.nikpanfilov.delivery.shared.validators.domain.name.NamePart
+import ru.nikpanfilov.delivery.shared.validators.domain.name.NameValidationItem
 import ru.nikpanfilov.delivery.shared.validators.domain.name.ValidateNameUseCase
 import ru.nikpanfilov.delivery.shared.validators.domain.name.isValid
 import ru.nikpanfilov.delivery.shared.validators.domain.phone.ValidatePhoneUseCase
@@ -77,6 +79,19 @@ class PersonalInfoViewModel @AssistedInject constructor(
 					lastname = validateNameUseCase(it.lastname, NamePart.SURNAME),
 					phone = validatePhoneUseCase(it.phone),
 					dataValid = true,
+				)
+			)
+		}
+
+		if (uiState.value is PersonalInfoState.Initial) {
+			setState(
+				PersonalInfoState.Content(
+					page = InfoPage.SENDER_INFO,
+					firstname = NameValidationItem(namePart = NamePart.NAME),
+					middlename = NameValidationItem(namePart = NamePart.PATRONYMIC),
+					lastname = NameValidationItem(namePart = NamePart.SURNAME),
+					phone = DefaultValidationItem(),
+					dataValid = false,
 				)
 			)
 		}
