@@ -20,6 +20,8 @@ import ru.nikpanfilov.delivery.core.presentation.lazyViewModel
 import ru.nikpanfilov.delivery.core.ui.compose.Screen
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationDestination
 import ru.nikpanfilov.delivery.feature.calculation.ui.CalculationScreen
+import ru.nikpanfilov.delivery.feature.personalinfo.PersonalInfoDestination
+import ru.nikpanfilov.delivery.feature.personalinfo.ui.PersonalInfoScreen
 import ru.nikpanfilov.delivery.feature.profile.ProfileDestination
 import ru.nikpanfilov.delivery.feature.profile.ui.ProfileScreen
 import ru.nikpanfilov.delivery.feature.shippingmethod.ShippingMethodDestination
@@ -49,6 +51,10 @@ class MainActivity : ComponentActivity() {
 
 	private val profileViewModel by lazyViewModel { stateHandle ->
 		(applicationContext as App).appComponent.profileViewModel.create(stateHandle)
+	}
+
+	private val personalInfoViewModel by lazyViewModel { stateHandle ->
+		(applicationContext as App).appComponent.personalInfoViewModel.create(stateHandle)
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -121,6 +127,15 @@ class MainActivity : ComponentActivity() {
 							ShippingMethodScreen(
 								state = state.value,
 								applyIntent = { shippingMethodViewModel.value.applyIntent(it) },
+							)
+						}
+						composable<PersonalInfoDestination> {
+							mainViewModel.applyIntent(MainIntent.SetOpenedScreen(PersonalInfoDestination))
+							val state = personalInfoViewModel.uiState.collectAsState()
+
+							PersonalInfoScreen(
+								state = state.value,
+								applyIntent = { personalInfoViewModel.applyIntent(it) },
 							)
 						}
 					}

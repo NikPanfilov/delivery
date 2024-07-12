@@ -1,6 +1,7 @@
 package ru.nikpanfilov.delivery.navigation
 
 import ru.nikpanfilov.delivery.core.navigation.GlobalRouter
+import ru.nikpanfilov.delivery.feature.personalinfo.PersonalInfoDestination
 import ru.nikpanfilov.delivery.feature.shippingmethod.presentation.ShippingMethodRouter
 import javax.inject.Inject
 
@@ -13,6 +14,6 @@ class ShippingMethodRouterImpl @Inject constructor(
 	}
 
 	override fun navigateToSenderInfo() {
-		//TODO(Добавить переход на экран)
+		router.navigateTo(PersonalInfoDestination)
 	}
 }

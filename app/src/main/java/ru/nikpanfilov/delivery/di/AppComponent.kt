@@ -11,6 +11,7 @@ import ru.nikpanfilov.delivery.core.network.di.NetworkModule
 import ru.nikpanfilov.delivery.core.token.di.TokenModule
 import ru.nikpanfilov.delivery.feature.calculation.di.CalculationModule
 import ru.nikpanfilov.delivery.feature.calculation.presentation.CalculationViewModel
+import ru.nikpanfilov.delivery.feature.personalinfo.presentation.PersonalInfoViewModel
 import ru.nikpanfilov.delivery.feature.profile.di.ProfileModule
 import ru.nikpanfilov.delivery.feature.profile.presentation.ProfileViewModel
 import ru.nikpanfilov.delivery.feature.shippingmethod.presentation.ShippingMethodViewModel
@@ -61,4 +62,5 @@ interface AppComponent {
 	val signInViewModel: SignInViewModel.Factory
 	val profileViewModel: ProfileViewModel.Factory
 	val shippingMethodViewModel: ShippingMethodViewModel.Factory
+	val personalInfoViewModel: PersonalInfoViewModel.Factory
 }
