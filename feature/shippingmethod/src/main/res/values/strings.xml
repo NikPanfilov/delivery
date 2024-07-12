@@ -3,5 +3,11 @@
 	<string name="shipping_method">Способ отправки</string>
 
 	<string name="price">%1$s \u20BD</string>
-	<string name="days">%1$s рабочих дней</string>
+	<plurals name="days">
+		<item quantity="one">%1$d рабочий день</item>
+		<item quantity="two">%1$d рабочих дня</item>
+		<item quantity="few">%1$d рабочих дня</item>
+		<item quantity="many">%1$d рабочих дней</item>
+		<item quantity="other">%1$d рабочих дней</item>
+	</plurals>
 </resources>
